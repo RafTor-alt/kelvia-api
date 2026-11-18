@@ -10,10 +10,10 @@ FESTIVAL = "Festival du Blaireau Brillant"
 QUANTITE_MAX = 4
 # Catégories de billets, en mémoire : prix en euros et stock.
 CATEGORIES = {
-    "Pass 1 jour": {"prix": 79, "stock": 5000},
+    "Pass 1 jour": {"prix": 59, "stock": 5000},
     "Pass 3 jours": {"prix": 149, "stock": 2000},
     "Camping": {"prix": 25, "stock": 1000},
-    "Ultra VIP": {"prix": 4999, "stock": 10},
+
 }
 
 app = FastAPI(title="Kelvia")
