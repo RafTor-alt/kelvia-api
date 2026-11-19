@@ -19,3 +19,6 @@ def test_quantite_trop_grande_refusee_integration():
     client = TestClient(app)
     reponse = client.post("/billets", json={"categorie": "Pass 1 jour", "quantite": 3})
     assert reponse.status_code == 422
+
+def test_achat_billets():
+    verifier_quantite(2)

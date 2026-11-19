@@ -21,3 +21,17 @@ services:
       GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
       GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /etc/grafana/provisioning/dashboards/kelvia.json
     volumes: ["./monitoring:/etc/grafana/provisioning:ro"]
+  vitrine:
+    image: nginx:alpine
+    ports: ["8080:80"]
+    volumes: ["./site:/usr/share/nginx/html:ro"]
+  kuma:
+    image: louislam/uptime-kuma:1
+    profiles: ["sonde"]
+    ports:
+      - "3001:3001"
+    volumes:
+      - kuma-data:/app/data
+
+volumes:
+  kuma-data:
